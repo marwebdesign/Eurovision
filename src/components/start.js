@@ -8,10 +8,13 @@ export const Start = () => {
     eurovisionwinners.map((contestant) => {
       if (contestant.winner === 'TRUE') {
         return (
-          <Content>
-            {contestant.year}
-            {contestant.artist_country}
-          </Content>
+          <Container style={{ backgroundImage: `url(${contestant.image_url})` }}>
+            <Content>
+              {contestant.year}
+              {contestant.artist_country}
+              {contestant.artist}
+            </Content>
+          </Container>
         )
       }
     })
@@ -20,4 +23,8 @@ export const Start = () => {
 
 export const Content = styled.p`
 color: blue;
+`
+const Container = styled.div`
+padding: 10px;
+background-repeat: no-repeat;
 `
